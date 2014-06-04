@@ -19,56 +19,57 @@
         text-align: center;
     }
     </style>
-  </head>
-  <body>
-  </body>
-</html>
-
-<!--
-TODO
-Second Sunday in May, Mother's Day
-Saturday between June 20 and 26 June, Midsummer Day; the occasion is also celebrated as the Day of the Finnish Flag. The flag is hoisted on Midsummer's eve at 6 PM and flown through the night until 9 PM the next day.
-Third Sunday in May, memorial day for the war dead (everyone who has died in Finnish wars, combat-like duties or peacekeeping operations both during fighting and after they've ceased, including those executed or who have died as a POW)
-Second Sunday in November, Father's Day
--->
-<script type="text/javascript">
+    <script type="text/javascript">
 <!--
 var today = new Date();
+var day = today.getDay(); // Sunday is 0, Monday is 1, ... Saturday is 6
 var dd = today.getDate();
 var mm = today.getMonth()+1; // January is 0!
 var yyyy = today.getFullYear();
-var day = "They're not (or there's an election, referendum or a president is inaugrated)";
+var reason = "They're not (or there's an election, referendum or a president is inaugrated)";
 
 if (mm == 2 && dd == 5) {
-    day = 'Birthday of the national poet Johan Ludvig Runeberg';
+    reason = 'Birthday of the national poet Johan Ludvig Runeberg';
 } else if (mm == 2 && dd == 28) {
-    day = 'Day of Kalevala; the occasion is also celebrated as the Day of Finnish culture';
+    reason = 'Day of Kalevala; the occasion is also celebrated as the Day of Finnish culture';
 } else if (mm == 3 && dd == 19) {
-    day = 'Birthday of novelist and playwright Minna Canth, Day of Equality, beginning in 2007';
+    reason = 'Birthday of novelist and playwright Minna Canth, Day of Equality, beginning in 2007';
 } else if (mm == 4 && dd == 9) {
-    day = 'The day Mikael Agricola, the founder of the literary Finnish died and Elias Lönnrot, a collector of folklore was born; the occasion is also celebrated as the Day of the Finnish language';
+    reason = 'The day Mikael Agricola, the founder of the literary Finnish died and Elias Lönnrot, a collector of folklore was born; the occasion is also celebrated as the Day of the Finnish language';
 } else if (mm == 4 && dd == 27) {
-    day = "National War Veterans' Day";
+    reason = "National War Veterans' Day";
 } else if (mm == 5 && dd == 1) {
-    day = 'Vappu, the Day of Finnish Labour';
+    reason = 'Vappu, the Day of Finnish Labour';
 } else if (mm == 5 && dd == 9) {
-    day = 'Europe Day';
+    reason = 'Europe Day';
 } else if (mm == 5 && dd == 12) {
-    day = 'Day of the Finnish Identity, birthday of the statesman Johan Vilhelm Snellman';
+    reason = 'Day of the Finnish Identity, birthday of the statesman Johan Vilhelm Snellman';
 } else if (mm == 6 && dd == 4) {
-    day = 'Birthday of Carl Gustaf Emil Mannerheim, Marshal of Finland; the occasion is also celebrated as the Flag Day of the Finnish Defence Forces';
+    reason = 'Birthday of Carl Gustaf Emil Mannerheim, Marshal of Finland; the occasion is also celebrated as the Flag Day of the Finnish Defence Forces';
 } else if (mm == 7 && dd == 6) {
-    day = 'Birthday of the poet Eino Leino; the occasion is also a celebration of poetry and summer';
+    reason = 'Birthday of the poet Eino Leino; the occasion is also a celebration of poetry and summer';
 } else if (mm == 10 && dd == 10) {
-    day = 'Birthday of the National writer Aleksis Kivi; the occasion is also celebrated as the Day of Finnish literature';
+    reason = 'Birthday of the National writer Aleksis Kivi; the occasion is also celebrated as the Day of Finnish literature';
 } else if (mm == 10 && dd == 24) {
-    day = 'Day of the United Nations';
+    reason = 'Day of the United Nations';
 } else if (mm == 11 && dd == 6) {
-    day = 'Day of the Swedish Identity and Gustavus Adolphus Day';
+    reason = 'Day of the Swedish Identity and Gustavus Adolphus Day';
 } else if (mm == 12 && dd == 6) {
-    day = 'Independence Day';
+    reason = 'Independence Day';
 } else if (mm == 12 && dd == 8) {
-    day = 'Birthday of the composer Jean Sibelius; the occasion is also celebrated as the Day of Finnish music';
+    reason = 'Birthday of the composer Jean Sibelius; the occasion is also celebrated as the Day of Finnish music';
+}
+
+if (mm == 5 && dd >= 8 && dd <=14 && day == 0) {
+    reason = "Mother's Day"
+} else if (mm == 5 && dd >= 15 && dd <= 21 && day == 0) {
+    reason = "Memorial day for the war dead (everyone who has died in Finnish wars, combat-like duties or peacekeeping operations both during fighting and after they've ceased, including those executed or who have died as a POW)"
+} else if (mm == 6 && dd >=20 && dd <=26 && day == 6) {
+    reason = "Midsummer"
+} else if (mm == 6 && dd >=19 && dd <=25 && day == 5) {
+    reason = "Midsummer's eve"
+} else if (mm == 11 && dd >= 15 && dd <= 21 && day == 0) {
+    reason = "Father's Day"
 }
 
 
@@ -80,13 +81,13 @@ if(mm<10) {
 }
 
 window.onload = function() {
-    document.getElementById("reason").innerHTML = day;
+    document.getElementById("reason").innerHTML = reason;
     document.getElementById("date").innerHTML = dd + '.' + mm + '.' + yyyy;
 }
 -->
-</script>
-
-<body>
+    </script>
+  </head>
+  <body>
     <P><div id="intro" class="intro">Flags are up in Finland because today is</div></P>
     <P>&nbsp;</P>
     <P>&nbsp;</P>
@@ -102,5 +103,5 @@ window.onload = function() {
     <P>&nbsp;</P>
     <P>&nbsp;</P>
     <P><div id="date" class="date"></div></P>
-    </body>
+  </body>
 </html>
