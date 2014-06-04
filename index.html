@@ -26,29 +26,10 @@
 
 <!--
 TODO
-February 28, day of Kalevala; the occasion is also celebrated as the Day of Finnish culture
-May 1, Vappu, the Day of Finnish Labour
 Second Sunday in May, Mother's Day
 Saturday between June 20 and 26 June, Midsummer Day; the occasion is also celebrated as the Day of the Finnish Flag. The flag is hoisted on Midsummer's eve at 6 PM and flown through the night until 9 PM the next day.
-December 6, Independence Day
-Days when Finland holds parliamentary and local elections, elections to the European Parliament, or a referendum
-The day the President of Finland is inaugurated -->
-
-<!--
-TODO
-February 5, birthday of the national poet Johan Ludvig Runeberg
-March 19, birthday of novelist and playwright Minna Canth, Day of Equality, beginning in 2007
-April 9, the day Mikael Agricola, the founder of the literary Finnish died and Elias Lönnrot, a collector of folklore was born; the occasion is also celebrated as the Day of the Finnish language
-April 27, National War Veterans' Day
-May 9, Europe Day
-May 12, Day of the Finnish Identity, birthday of the statesman Johan Vilhelm Snellman
 Third Sunday in May, memorial day for the war dead (everyone who has died in Finnish wars, combat-like duties or peacekeeping operations both during fighting and after they've ceased, including those executed or who have died as a POW)
-July 6, birthday of the poet Eino Leino; the occasion is also a celebration of poetry and summer
-October 10, birthday of the National writer Aleksis Kivi; the occasion is also celebrated as the Day of Finnish literature
-October 24, Day of the United Nations
-November 6, Day of the Swedish Identity and Gustavus Adolphus Day
 Second Sunday in November, Father's Day
-8 December, birthday of the composer Jean Sibelius; the occasion is also celebrated as the Day of Finnish music[3]
 -->
 <script type="text/javascript">
 <!--
@@ -56,12 +37,38 @@ var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth()+1; // January is 0!
 var yyyy = today.getFullYear();
-var day = "They's not (or there's an election)";
+var day = "They're not (or there's an election, referendum or a president is inaugrated)";
 
 if (mm == 2 && dd == 5) {
-    day = 'birthday of the national poet Johan Ludvig Runeberg';
+    day = 'Birthday of the national poet Johan Ludvig Runeberg';
+} else if (mm == 2 && dd == 28) {
+    day = 'Day of Kalevala; the occasion is also celebrated as the Day of Finnish culture';
+} else if (mm == 3 && dd == 19) {
+    day = 'Birthday of novelist and playwright Minna Canth, Day of Equality, beginning in 2007';
+} else if (mm == 4 && dd == 9) {
+    day = 'The day Mikael Agricola, the founder of the literary Finnish died and Elias Lönnrot, a collector of folklore was born; the occasion is also celebrated as the Day of the Finnish language';
+} else if (mm == 4 && dd == 27) {
+    day = "National War Veterans' Day";
+} else if (mm == 5 && dd == 1) {
+    day = 'Vappu, the Day of Finnish Labour';
+} else if (mm == 5 && dd == 9) {
+    day = 'Europe Day';
+} else if (mm == 5 && dd == 12) {
+    day = 'Day of the Finnish Identity, birthday of the statesman Johan Vilhelm Snellman';
 } else if (mm == 6 && dd == 4) {
-    day = 'birthday of Carl Gustaf Emil Mannerheim, Marshal of Finland; the occasion is also celebrated as the Flag Day of the Finnish Defence Forces';
+    day = 'Birthday of Carl Gustaf Emil Mannerheim, Marshal of Finland; the occasion is also celebrated as the Flag Day of the Finnish Defence Forces';
+} else if (mm == 7 && dd == 6) {
+    day = 'Birthday of the poet Eino Leino; the occasion is also a celebration of poetry and summer';
+} else if (mm == 10 && dd == 10) {
+    day = 'Birthday of the National writer Aleksis Kivi; the occasion is also celebrated as the Day of Finnish literature';
+} else if (mm == 10 && dd == 24) {
+    day = 'Day of the United Nations';
+} else if (mm == 11 && dd == 6) {
+    day = 'Day of the Swedish Identity and Gustavus Adolphus Day';
+} else if (mm == 12 && dd == 6) {
+    day = 'Independence Day';
+} else if (mm == 12 && dd == 8) {
+    day = 'Birthday of the composer Jean Sibelius; the occasion is also celebrated as the Day of Finnish music';
 }
 
 
@@ -80,7 +87,7 @@ window.onload = function() {
 </script>
 
 <body>
-    <P><div id="intro" class="intro">Flags are up in Finland because it's the</div></P>
+    <P><div id="intro" class="intro">Flags are up in Finland because today is</div></P>
     <P>&nbsp;</P>
     <P>&nbsp;</P>
     <P>&nbsp;</P>
