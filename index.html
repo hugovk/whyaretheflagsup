@@ -6,7 +6,7 @@
       Why are the flags up?
     </title>
     <style type="text/css">
-    .intro, .reason, .date {
+    .intro, .reason, .other_reason {
         font-family: sans-serif;
         font-weight: normal;
         text-align: center;
@@ -26,7 +26,9 @@ var day = today.getDay(); // Sunday is 0, Monday is 1, ... Saturday is 6
 var dd = today.getDate();
 var mm = today.getMonth()+1; // January is 0!
 var yyyy = today.getFullYear();
-var reason = "They're not (or there's an election, referendum or a president is inaugrated)";
+var intro = 'Flags are up in Finland because today, <span id="date" class="date"></span>, is:';
+var reason = "";
+var other_reason = "";
 
 // Static dates
 if (mm == 2 && dd == 5) {
@@ -99,18 +101,27 @@ else
 
 date_format = dd + "" + suffix + " " + m_names[mm-1] + " " + yyyy;
 
+if (reason == "") {
+    intro = 'Flags are not up in Finland today, <span id="date" class="date"></span>';
+    other_reason = "(Unless there's parliamentary or local elections, elections to the European Parliament, a referendum, or the President of Finland is inaugurated)"
+}
+
+
 window.onload = function() {
+    document.getElementById("intro").innerHTML = intro;
     document.getElementById("reason").innerHTML = reason;
+    document.getElementById("other_reason").innerHTML = other_reason;
     document.getElementById("date").innerHTML = date_format;
 }
 -->
     </script>
   </head>
   <body>
-    <H2><div id="intro" class="intro">Flags are up in Finland because today, <span id="date" class="date"></span>, is:</div></H2>
+    <H2><div id="intro" class="intro"></div></H2>
     <P>&nbsp;</P>
     <P>&nbsp;</P>
     <P>&nbsp;</P>
     <H1><div id ="reason" class="reason"></div></H1>
+    <P><div id ="other_reason" class="other_reason"></div></P>
   </body>
 </html>
