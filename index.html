@@ -83,7 +83,7 @@ if (mm == 2 && dd == 5) {
 } else if (mm == 3 && dd == 19) {
     reason = 'Birthday of novelist and playwright Minna Canth, Day of Equality, beginning in 2007';
 } else if (mm == 4 && dd == 9) {
-    reason = 'The day Mikael Agricola, the founder of the literary Finnish died and Elias Lönnrot, a collector of folklore was born; the occasion is also celebrated as the Day of the Finnish language';
+    reason = 'The day Mikael Agricola, the founder of the literary Finnish died and Elias LÃ¶nnrot, a collector of folklore was born; the occasion is also celebrated as the Day of the Finnish language';
 } else if (mm == 4 && dd == 27) {
     reason = "National War Veterans' Day";
 } else if (mm == 5 && dd == 1) {
@@ -154,7 +154,8 @@ else
 date_format = dd + "" + suffix + " " + m_names[mm-1] + " " + yyyy;
 
 if (reason == "") {
-    intro = 'Flags are not up in Finland today, <span id="date" class="date"></span>';
+    intro = ''
+    reason = 'Flags are not up in Finland today, <span id="date" class="date"></span>';
     other_reason = "(Unless there's parliamentary or local elections, elections to the European Parliament, a referendum, or the President of Finland is inaugurated)"
 }
 
