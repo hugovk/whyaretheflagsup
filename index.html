@@ -121,7 +121,14 @@ if (mm == 5 && dd >= 8 && dd <=14 && day == 0) {
     reason = "Father's Day"
 }
 
-/* Format like 4th June 2014 */
+// One-offs
+if (dd == 4 && mm == 9 && yyyy == 2014) {
+    reason = "70 years since the end of the Continuation War"
+} else if (dd == 19 && mm == 4 && yyyy == 2015) {
+    reason = "A parliamentary election"
+}
+
+// Format like 4th June 2014
 var m_names = new Array("January", "February", "March",
     "April", "May", "June", "July", "August", "September",
     "October", "November", "December");
