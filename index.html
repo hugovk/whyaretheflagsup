@@ -15,9 +15,48 @@
     }
     .reason {
         font-size: 200%;
+
+        /* Vertical centring */
+        height: 250px;
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
     }
     .date {
     }
+
+    /* Sticky footer */
+    * {
+      margin: 0;
+    }
+    html, body {
+      height: 100%;
+    }
+    .page-wrap {
+      min-height: 100%;
+      /* equal to footer height */
+      margin-bottom: -60px;
+    }
+    .page-wrap:after {
+      content: "";
+      display: block;
+    }
+    .site-footer, .page-wrap:after {
+      /* .push must be the same height as footer */
+      height: 60px;
+    }
+    .site-footer {
+    }
+
+    /*
+    .finnish-colors {
+      color: white;
+      background: #18447E;
+    }
+    */
     </style>
 
     <link rel="stylesheet" href="https://simonwhitaker.github.io/github-fork-ribbon-css/gh-fork-ribbon.css">
@@ -129,10 +168,10 @@ window.onload = function() {
 
   ga('create', 'UA-2827121-8', 'hugovk.github.io');
   ga('send', 'pageview');
-
     </script>
   </head>
   <body>
+    <div class="page-wrap">
 
     <div class="github-fork-ribbon-wrapper right">
         <div class="github-fork-ribbon">
@@ -141,10 +180,12 @@ window.onload = function() {
     </div>
 
     <H2><div id="intro" class="intro"></div></H2>
-    <P>&nbsp;</P>
-    <P>&nbsp;</P>
-    <P>&nbsp;</P>
     <H1><div id ="reason" class="reason"></div></H1>
-    <P><div id ="other_reason" class="other_reason"></div></P>
+
+    </div>
+
+    <footer class="site-footer"><P>&nbsp;</P>
+        <div id ="other_reason" class="other_reason"></div>
+    </footer>
   </body>
 </html>
