@@ -1,201 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+<head>
+    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
     <title>
-      Why are the flags up in Finland?
+        Why are the flags up in Finland?
     </title>
     <style type="text/css">
-    .intro, .reason, .other_reason {
-        font-family: sans-serif;
-        font-weight: normal;
-        text-align: center;
-    }
-    .intro {
-    }
-    .reason {
-        font-size: 200%;
+        .intro, .reason, .other_reason {
+            font-family: sans-serif;
+            font-weight: normal;
+            text-align: center;
+        }
 
-        /* Vertical centring */
-        height: 250px;
-        position: absolute;
-        top:0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-    }
-    .date {
-    }
+        .intro {
+        }
 
-    /* Sticky footer */
-    * {
-      margin: 0;
-    }
-    html, body {
-      height: 100%;
-    }
-    .page-wrap {
-      min-height: 100%;
-      /* equal to footer height */
-      margin-bottom: -60px;
-    }
-    .page-wrap:after {
-      content: "";
-      display: block;
-    }
-    .site-footer, .page-wrap:after {
-      /* .push must be the same height as footer */
-      height: 60px;
-    }
-    .site-footer {
-    }
+        .reason {
+            font-size: 200%;
 
-    /* Background image */
-    html {
-        background: url(flag.jpg) no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
-    /*
-    .finnish-colors {
-      color: white;
-      background: #18447E;
-    }
-    */
+            /* Vertical centring */
+            height: 250px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .date {
+        }
+
+        /* Sticky footer */
+        * {
+            margin: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .page-wrap {
+            min-height: 100%;
+            /* equal to footer height */
+            margin-bottom: -60px;
+        }
+
+        .page-wrap:after {
+            content: "";
+            display: block;
+        }
+
+        .site-footer, .page-wrap:after {
+            /* .push must be the same height as footer */
+            height: 60px;
+        }
+
+        .site-footer {
+        }
+
+        /* Background image */
+        html {
+            background: url(flag.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        /*
+        .finnish-colors {
+          color: white;
+          background: #18447E;
+        }
+        */
 
     </style>
 
     <link rel="stylesheet" href="https://simonwhitaker.github.io/github-fork-ribbon-css/gh-fork-ribbon.css">
     <!--[if lt IE 9]>
-        <link rel="stylesheet" href="https://simonwhitaker.github.io/github-fork-ribbon-css/gh-fork-ribbon.ie.css">
+    <link rel="stylesheet" href="https://simonwhitaker.github.io/github-fork-ribbon-css/gh-fork-ribbon.ie.css">
     <![endif]-->
 
     <script type="text/javascript">
-<!--
-var today = new Date();
-var day = today.getDay(); // Sunday is 0, Monday is 1, ... Saturday is 6
-var dd = today.getDate();
-var mm = today.getMonth()+1; // January is 0!
-var yyyy = today.getFullYear();
-var intro = 'Flags are up in Finland because today, <span id="date" class="date"></span>, is:';
-var reason = "";
-var other_reason = "";
-var disable_background_image = false;
+        <!--
+        var today = new Date();
+        var day = today.getDay(); // Sunday is 0, Monday is 1, ... Saturday is 6
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; // January is 0!
+        var yyyy = today.getFullYear();
+        var intro = 'Flags are up in Finland because today, <span id="date" class="date"></span>, is:';
+        var reason = "";
+        var other_reason = "";
+        var disable_background_image = false;
 
-// Static dates
-if (mm == 2 && dd == 5) {
-    reason = 'Birthday of the national poet Johan Ludvig Runeberg';
-} else if (mm == 2 && dd == 28) {
-    reason = 'Day of Kalevala; the occasion is also celebrated as the Day of Finnish culture';
-} else if (mm == 3 && dd == 19) {
-    reason = 'Birthday of novelist and playwright Minna Canth, Day of Equality, beginning in 2007';
-} else if (mm == 4 && dd == 9) {
-    reason = 'The day Mikael Agricola, the founder of the literary Finnish died and Elias Lönnrot, a collector of folklore was born; the occasion is also celebrated as the Day of the Finnish language';
-} else if (mm == 4 && dd == 27) {
-    reason = "National War Veterans' Day";
-} else if (mm == 5 && dd == 1) {
-    reason = 'Vappu, the Day of Finnish Labour';
-} else if (mm == 5 && dd == 9) {
-    reason = 'Europe Day';
-} else if (mm == 5 && dd == 12) {
-    reason = 'Day of the Finnish Identity, birthday of the statesman Johan Vilhelm Snellman';
-} else if (mm == 6 && dd == 4) {
-    reason = 'Birthday of Carl Gustaf Emil Mannerheim, Marshal of Finland; the occasion is also celebrated as the Flag Day of the Finnish Defence Forces';
-} else if (mm == 7 && dd == 6) {
-    reason = 'Birthday of the poet Eino Leino; the occasion is also a celebration of poetry and summer';
-} else if (mm == 10 && dd == 10) {
-    reason = 'Birthday of the National writer Aleksis Kivi; the occasion is also celebrated as the Day of Finnish literature';
-} else if (mm == 10 && dd == 24) {
-    reason = 'Day of the United Nations';
-} else if (mm == 11 && dd == 6) {
-    reason = 'Day of the Swedish Identity and Gustavus Adolphus Day';
-} else if (mm == 12 && dd == 6) {
-    reason = 'Independence Day';
-} else if (mm == 12 && dd == 8) {
-    reason = 'Birthday of the composer Jean Sibelius; the occasion is also celebrated as the Day of Finnish music';
-}
+        // Static dates
+        if (mm == 2 && dd == 5) {
+            reason = 'Birthday of the national poet Johan Ludvig Runeberg';
+        } else if (mm == 2 && dd == 28) {
+            reason = 'Day of Kalevala; the occasion is also celebrated as the Day of Finnish culture';
+        } else if (mm == 3 && dd == 19) {
+            reason = 'Birthday of novelist and playwright Minna Canth, Day of Equality, beginning in 2007';
+        } else if (mm == 4 && dd == 9) {
+            reason = 'The day Mikael Agricola, the founder of the literary Finnish died and Elias Lönnrot, a collector of folklore was born; the occasion is also celebrated as the Day of the Finnish language';
+        } else if (mm == 4 && dd == 27) {
+            reason = "National War Veterans' Day";
+        } else if (mm == 5 && dd == 1) {
+            reason = 'Vappu, the Day of Finnish Labour';
+        } else if (mm == 5 && dd == 9) {
+            reason = 'Europe Day';
+        } else if (mm == 5 && dd == 12) {
+            reason = 'Day of the Finnish Identity, birthday of the statesman Johan Vilhelm Snellman';
+        } else if (mm == 6 && dd == 4) {
+            reason = 'Birthday of Carl Gustaf Emil Mannerheim, Marshal of Finland; the occasion is also celebrated as the Flag Day of the Finnish Defence Forces';
+        } else if (mm == 7 && dd == 6) {
+            reason = 'Birthday of the poet Eino Leino; the occasion is also a celebration of poetry and summer';
+        } else if (mm == 10 && dd == 10) {
+            reason = 'Birthday of the National writer Aleksis Kivi; the occasion is also celebrated as the Day of Finnish literature';
+        } else if (mm == 10 && dd == 24) {
+            reason = 'Day of the United Nations';
+        } else if (mm == 11 && dd == 6) {
+            reason = 'Day of the Swedish Identity and Gustavus Adolphus Day';
+        } else if (mm == 12 && dd == 6) {
+            reason = 'Independence Day';
+        } else if (mm == 12 && dd == 8) {
+            reason = 'Birthday of the composer Jean Sibelius; the occasion is also celebrated as the Day of Finnish music';
+        }
 
-// Moveable dates
-if (mm == 5 && dd >= 8 && dd <=14 && day == 0) {
-    reason = "Mother's Day"
-} else if (mm == 5 && dd >= 15 && dd <= 21 && day == 0) {
-    reason = "Memorial day for the war dead (everyone who has died in Finnish wars, combat-like duties or peacekeeping operations both during fighting and after they've ceased, including those executed or who have died as a POW)"
-} else if (mm == 6 && dd >=19 && dd <=25 && day == 5) {
-    reason = "Midsummer's eve"
-} else if (mm == 6 && dd >=20 && dd <=26 && day == 6) {
-    reason = "Midsummer"
-} else if (mm == 11 && dd >= 15 && dd <= 21 && day == 0) {
-    reason = "Father's Day"
-}
+        // Moveable dates
+        if (mm == 5 && dd >= 8 && dd <= 14 && day == 0) {
+            reason = "Mother's Day"
+        } else if (mm == 5 && dd >= 15 && dd <= 21 && day == 0) {
+            reason = "Memorial day for the war dead (everyone who has died in Finnish wars, combat-like duties or peacekeeping operations both during fighting and after they've ceased, including those executed or who have died as a POW)"
+        } else if (mm == 6 && dd >= 19 && dd <= 25 && day == 5) {
+            reason = "Midsummer's eve"
+        } else if (mm == 6 && dd >= 20 && dd <= 26 && day == 6) {
+            reason = "Midsummer"
+        } else if (mm == 11 && dd >= 15 && dd <= 21 && day == 0) {
+            reason = "Father's Day"
+        }
 
-// One-offs
-if (dd == 4 && mm == 9 && yyyy == 2014) {
-    reason = "70 years since the end of the Continuation War"
-} else if (dd == 19 && mm == 4 && yyyy == 2015) {
-    reason = "A parliamentary election"
-}
+        // One-offs
+        if (dd == 4 && mm == 9 && yyyy == 2014) {
+            reason = "70 years since the end of the Continuation War"
+        } else if (dd == 19 && mm == 4 && yyyy == 2015) {
+            reason = "A parliamentary election"
+        }
 
-// Format like 4th June 2014
-var m_names = new Array("January", "February", "March",
-    "April", "May", "June", "July", "August", "September",
-    "October", "November", "December");
+        // Format like 4th June 2014
+        var m_names = new Array("January", "February", "March",
+                "April", "May", "June", "July", "August", "September",
+                "October", "November", "December");
 
-var suffix = "";
-if (dd == 1 || dd == 21 || dd == 31)
-   {
-   suffix = "st";
-   }
-else if (dd == 2 || dd == 22)
-   {
-   suffix = "nd";
-   }
-else if (dd == 3 || dd == 23)
-   {
-   suffix = "rd";
-   }
-else
-   {
-   suffix = "th";
-   }
+        var suffix = "";
+        if (dd == 1 || dd == 21 || dd == 31) {
+            suffix = "st";
+        }
+        else if (dd == 2 || dd == 22) {
+            suffix = "nd";
+        }
+        else if (dd == 3 || dd == 23) {
+            suffix = "rd";
+        }
+        else {
+            suffix = "th";
+        }
 
-date_format = dd + "" + suffix + " " + m_names[mm-1] + " " + yyyy;
+        date_format = dd + "" + suffix + " " + m_names[mm - 1] + " " + yyyy;
 
-if (reason == "") {
-    intro = '';
-    reason = 'Flags are not up in Finland today, <span id="date" class="date"></span>';
-    other_reason = "(Unless there's parliamentary or local elections, elections to the European Parliament, a referendum, or the President of Finland is inaugurated)"
-    disable_background_image = true;
-}
+        if (reason == "") {
+            intro = '';
+            reason = 'Flags are not up in Finland today, <span id="date" class="date"></span>';
+            other_reason = "(Unless there's parliamentary or local elections, elections to the European Parliament, a referendum, or the President of Finland is inaugurated)"
+            disable_background_image = true;
+        }
 
 
-window.onload = function() {
-    document.getElementById("intro").innerHTML = intro;
-    document.getElementById("reason").innerHTML = reason;
-    document.getElementById("other_reason").innerHTML = other_reason;
-    document.getElementById("date").innerHTML = date_format;
-    if (disable_background_image) {
-        var htmlElement = document.querySelector("html");
-        htmlElement.style.backgroundImage = 'none';
-    }
+        window.onload = function () {
+            document.getElementById("intro").innerHTML = intro;
+            document.getElementById("reason").innerHTML = reason;
+            document.getElementById("other_reason").innerHTML = other_reason;
+            document.getElementById("date").innerHTML = date_format;
+            if (disable_background_image) {
+                var htmlElement = document.querySelector("html");
+                htmlElement.style.backgroundImage = 'none';
+            }
 
-}
--->
+        }
+        -->
     </script>
     <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-2827121-8', 'hugovk.github.io');
-  ga('send', 'pageview');
+        ga('create', 'UA-2827121-8', 'hugovk.github.io');
+        ga('send', 'pageview');
     </script>
-  </head>
-  <body>
-    <div class="page-wrap">
+</head>
+<body>
+<div class="page-wrap">
 
     <div class="github-fork-ribbon-wrapper right">
         <div class="github-fork-ribbon">
@@ -203,13 +215,18 @@ window.onload = function() {
         </div>
     </div>
 
-    <H2><div id="intro" class="intro"></div></H2>
-    <H1><div id ="reason" class="reason"></div></H1>
+    <H2>
+        <div id="intro" class="intro"></div>
+    </H2>
+    <H1>
+        <div id="reason" class="reason"></div>
+    </H1>
 
-    </div>
+</div>
 
-    <footer class="site-footer"><P>&nbsp;</P>
-        <div id ="other_reason" class="other_reason"></div>
-    </footer>
-  </body>
+<footer class="site-footer"><P>&nbsp;</P>
+
+    <div id="other_reason" class="other_reason"></div>
+</footer>
+</body>
 </html>
