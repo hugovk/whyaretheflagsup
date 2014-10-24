@@ -51,12 +51,21 @@
     .site-footer {
     }
 
+    /* Background image */
+    html {
+        background: url(flag.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
     /*
     .finnish-colors {
       color: white;
       background: #18447E;
     }
     */
+
     </style>
 
     <link rel="stylesheet" href="https://simonwhitaker.github.io/github-fork-ribbon-css/gh-fork-ribbon.css">
@@ -74,6 +83,7 @@ var yyyy = today.getFullYear();
 var intro = 'Flags are up in Finland because today, <span id="date" class="date"></span>, is:';
 var reason = "";
 var other_reason = "";
+var disable_background_image = false;
 
 // Static dates
 if (mm == 2 && dd == 5) {
@@ -154,9 +164,10 @@ else
 date_format = dd + "" + suffix + " " + m_names[mm-1] + " " + yyyy;
 
 if (reason == "") {
-    intro = ''
+    intro = '';
     reason = 'Flags are not up in Finland today, <span id="date" class="date"></span>';
     other_reason = "(Unless there's parliamentary or local elections, elections to the European Parliament, a referendum, or the President of Finland is inaugurated)"
+    disable_background_image = true;
 }
 
 
@@ -165,6 +176,11 @@ window.onload = function() {
     document.getElementById("reason").innerHTML = reason;
     document.getElementById("other_reason").innerHTML = other_reason;
     document.getElementById("date").innerHTML = date_format;
+    if (disable_background_image) {
+        var htmlElement = document.querySelector("html");
+        htmlElement.style.backgroundImage = 'none';
+    }
+
 }
 -->
     </script>
