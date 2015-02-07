@@ -78,13 +78,11 @@
             background-color: #18447E;
         }
 
-        /*
-        .finnish-colors {
-          color: white;
-          background: #18447E;
+        .twitter-button {
+            top: 5px;
+            left: 5px;
+            position: absolute;
         }
-        */
-
     </style>
 
     <script type="text/javascript">
@@ -168,7 +166,7 @@
         if (reason === "") {
             intro = '';
             reason = 'Flags are not up in Finland today, <span id="date" class="date"></span>';
-            other_reason = "(Unless there's elections, a referendum, the president is inaugurated, or something else - <a href=\"https://github.com/hugovk/whyaretheflagsup/issues/new\">let us know</a>)";
+            other_reason = "(Unless there's elections, a referendum, the president is inaugurated, or something else &ndash; <a href=\"https://github.com/hugovk/whyaretheflagsup/issues/new\">let us know</a>)";
             enable_background_image = false;
         }
 
@@ -204,6 +202,11 @@
 </head>
 <body>
 <div class="page-wrap">
+
+    <div class="twitter-button">
+        <a href="https://twitter.com/FinnishFlags" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @FinnishFlags</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
 
     <div class="github-fork-ribbon-wrapper right">
         <div class="github-fork-ribbon">
