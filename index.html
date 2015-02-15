@@ -18,23 +18,23 @@
             text-align: center;
         }
 
-        .intro {
+        .outline {
+            color: white;
+            text-shadow:
+                -1px -1px 0 black,
+                1px -1px 0 black,
+                -1px 1px 0 black,
+                1px 1px 0 black;
         }
 
-        .reason {
-            font-size: 200%;
-
-            /* Vertical centring */
-            height: 250px;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
-
-        .date {
+        #reason-container {
+          padding: 5px;
+          position: absolute;
+          top: 48px;
+          bottom: 60px;
+          left: 0;
+          right: 0;
+          text-align: center;
         }
 
         /* Sticky footer */
@@ -85,6 +85,9 @@
         }
     </style>
 
+    <script src='jquery-1.11.2.min.js'></script>
+    <script src="jquery.textfill.min.js"></script>
+
     <script type="text/javascript">
         <!--
         var today = new Date();
@@ -96,6 +99,7 @@
         var reason = "";
         var other_reason = "";
         var enable_background_image = true;
+
         // Static dates
         if (mm === 2 && dd === 5) {
             reason = 'Birthday of the national poet Johan Ludvig Runeberg';
@@ -170,17 +174,24 @@
             enable_background_image = false;
         }
 
-        window.onload = function () {
-            document.getElementById("intro").innerHTML = intro;
-            document.getElementById("reason").innerHTML = reason;
-            document.getElementById("other_reason").innerHTML = other_reason;
-            document.getElementById("date").innerHTML = date_format;
-            console.log(enable_background_image);
-            if (enable_background_image) {
-                var htmlElement = document.querySelector("html");
-                htmlElement.style.backgroundImage = 'url(flag.jpg)';
-            }
-        }
+$(document).ready(function() {
+    $('#intro').html(intro);
+    $('#reason').html(reason);
+    $('#other_reason').html(other_reason);
+    $('#date').html(date_format);
+    if (enable_background_image) {
+        var htmlElement = document.querySelector("html");
+        htmlElement.style.backgroundImage = 'url(flag.jpg)';
+        $("#reason").addClass("outline");
+        $(".reason-container").css({"bottom": "0"});
+    }
+    $('#reason-container').textfill({ maxFontPixels: 0 });
+});
+
+$(window).resize(function() {
+  $('#reason-container').textfill( {maxFontPixels: 0} );
+});
+
         -->
     </script>
     <script>
@@ -215,10 +226,10 @@
     </div>
 
     <H2>
-        <div id="intro" class="intro"></div>
+        <div id="intro" class="intro outline"></div>
     </H2>
     <H1>
-        <div id="reason" class="reason"></div>
+        <div id="reason-container"><span id="reason" class="reason"></span></div>
     </H1>
 
 </div>
