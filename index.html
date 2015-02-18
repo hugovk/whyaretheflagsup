@@ -18,23 +18,23 @@
             text-align: center;
         }
 
-        .intro {
+        .outline {
+            color: white;
+            text-shadow:
+                -1px -1px 0 black,
+                1px -1px 0 black,
+                -1px 1px 0 black,
+                1px 1px 0 black;
         }
 
-        .reason {
-            font-size: 200%;
-
-            /* Vertical centring */
-            height: 250px;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
-
-        .date {
+        #reason-container {
+          padding: 5px;
+          position: absolute;
+          top: 48px;
+          bottom: 60px;
+          left: 0;
+          right: 0;
+          text-align: center;
         }
 
         /* Sticky footer */
@@ -78,14 +78,15 @@
             background-color: #18447E;
         }
 
-        /*
-        .finnish-colors {
-          color: white;
-          background: #18447E;
+        .twitter-button {
+            top: 5px;
+            left: 5px;
+            position: absolute;
         }
-        */
-
     </style>
+
+    <script src='jquery-1.11.2.min.js'></script>
+    <script src="jquery.textfill.min.js"></script>
 
     <script type="text/javascript">
         <!--
@@ -98,6 +99,7 @@
         var reason = "";
         var other_reason = "";
         var enable_background_image = true;
+
         // Static dates
         if (mm === 2 && dd === 5) {
             reason = 'Birthday of the national poet Johan Ludvig Runeberg';
@@ -168,21 +170,28 @@
         if (reason === "") {
             intro = '';
             reason = 'Flags are not up in Finland today, <span id="date" class="date"></span>';
-            other_reason = "(Unless there's elections, a referendum, the president is inaugurated, or something else - <a href=\"https://github.com/hugovk/whyaretheflagsup/issues/new\">let us know</a>)";
+            other_reason = "(Unless there's elections, a referendum, the president is inaugurated, or something else &ndash; <a href=\"https://github.com/hugovk/whyaretheflagsup/issues/new\">let us know</a>)";
             enable_background_image = false;
         }
 
-        window.onload = function () {
-            document.getElementById("intro").innerHTML = intro;
-            document.getElementById("reason").innerHTML = reason;
-            document.getElementById("other_reason").innerHTML = other_reason;
-            document.getElementById("date").innerHTML = date_format;
-            console.log(enable_background_image);
-            if (enable_background_image) {
-                var htmlElement = document.querySelector("html");
-                htmlElement.style.backgroundImage = 'url(flag.jpg)';
-            }
-        }
+$(document).ready(function() {
+    $('#intro').html(intro);
+    $('#reason').html(reason);
+    $('#other_reason').html(other_reason);
+    $('#date').html(date_format);
+    if (enable_background_image) {
+        var htmlElement = document.querySelector("html");
+        htmlElement.style.backgroundImage = 'url(flag.jpg)';
+        $("#reason").addClass("outline");
+        $(".reason-container").css({"bottom": "0"});
+    }
+    $('#reason-container').textfill({ maxFontPixels: 0 });
+});
+
+$(window).resize(function() {
+  $('#reason-container').textfill( {maxFontPixels: 0} );
+});
+
         -->
     </script>
     <script>
@@ -205,6 +214,11 @@
 <body>
 <div class="page-wrap">
 
+    <div class="twitter-button">
+        <a href="https://twitter.com/FinnishFlags" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @FinnishFlags</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+
     <div class="github-fork-ribbon-wrapper right">
         <div class="github-fork-ribbon">
             <a href="https://github.com/hugovk/whyaretheflagsup">Fork me on GitHub</a>
@@ -212,10 +226,10 @@
     </div>
 
     <H2>
-        <div id="intro" class="intro"></div>
+        <div id="intro" class="intro outline"></div>
     </H2>
     <H1>
-        <div id="reason" class="reason"></div>
+        <div id="reason-container"><span id="reason" class="reason"></span></div>
     </H1>
 
 </div>
