@@ -27,8 +27,10 @@ def flag_reason():
 
     # <div class="reason" id="reason"></div>
 
-    reason_div = soup.find_all("div", class_="reason")[0]
+    reason_div = soup.find_all("span", class_="reason")[0]
     reason = reason_div.text
+    if "Flags are not up in Finland today" in reason:
+        return None
     return reason
 
 
