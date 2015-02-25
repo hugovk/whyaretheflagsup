@@ -1,4 +1,4 @@
 Why are the flags up in Finland?
 ================
 
-https://hugovk.github.io/whyaretheflagsup/
+https://whyaretheflagsup.github.io

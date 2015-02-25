@@ -21,23 +21,23 @@
             text-align: center;
         }
 
-        .intro {
+        .outline {
+            color: white;
+            text-shadow:
+                -1px -1px 0 black,
+                1px -1px 0 black,
+                -1px 1px 0 black,
+                1px 1px 0 black;
         }
 
-        .reason {
-            font-size: 200%;
-
-            /* Vertical centring */
-            height: 250px;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
-
-        .date {
+        #reason-container {
+          padding: 5px;
+          position: absolute;
+          top: 48px;
+          bottom: 60px;
+          left: 0;
+          right: 0;
+          text-align: center;
         }
 
         /* Sticky footer */
@@ -81,14 +81,15 @@
             background-color: #18447E;
         }
 
-        /*
-        .finnish-colors {
-          color: white;
-          background: #18447E;
+        .twitter-button {
+            top: 5px;
+            left: 5px;
+            position: absolute;
         }
-        */
-
     </style>
+
+    <script src='jquery-1.11.2.min.js'></script>
+    <script src="jquery.textfill.min.js"></script>
 
     <script type="text/javascript">
         <!--
@@ -103,101 +104,97 @@
         var enable_background_image = true;
 
         // Static dates
-        if (mm == 2 && dd == 5) {
+        if (mm === 2 && dd === 5) {
             reason = 'Birthday of the national poet Johan Ludvig Runeberg';
-        } else if (mm == 2 && dd == 28) {
+        } else if (mm === 2 && dd === 28) {
             reason = 'Day of Kalevala; the occasion is also celebrated as the Day of Finnish culture';
-        } else if (mm == 3 && dd == 19) {
+        } else if (mm === 3 && dd === 19) {
             reason = 'Birthday of novelist and playwright Minna Canth, Day of Equality, beginning in 2007';
-        } else if (mm == 4 && dd == 9) {
+        } else if (mm === 4 && dd === 9) {
             reason = 'The day Mikael Agricola, the founder of the literary Finnish died and Elias Lönnrot, a collector of folklore was born; the occasion is also celebrated as the Day of the Finnish language';
-        } else if (mm == 4 && dd == 27) {
+        } else if (mm === 4 && dd === 27) {
             reason = "National War Veterans' Day";
-        } else if (mm == 5 && dd == 1) {
+        } else if (mm === 5 && dd === 1) {
             reason = 'Vappu, the Day of Finnish Labour';
-        } else if (mm == 5 && dd == 9) {
+        } else if (mm === 5 && dd === 9) {
             reason = 'Europe Day';
-        } else if (mm == 5 && dd == 12) {
+        } else if (mm === 5 && dd === 12) {
             reason = 'Day of the Finnish Identity, birthday of the statesman Johan Vilhelm Snellman';
-        } else if (mm == 6 && dd == 4) {
+        } else if (mm === 6 && dd === 4) {
             reason = 'Birthday of Carl Gustaf Emil Mannerheim, Marshal of Finland; the occasion is also celebrated as the Flag Day of the Finnish Defence Forces';
-        } else if (mm == 7 && dd == 6) {
+        } else if (mm === 7 && dd === 6) {
             reason = 'Birthday of the poet Eino Leino; the occasion is also a celebration of poetry and summer';
-        } else if (mm == 10 && dd == 10) {
+        } else if (mm === 10 && dd === 10) {
             reason = 'Birthday of the National writer Aleksis Kivi; the occasion is also celebrated as the Day of Finnish literature';
-        } else if (mm == 10 && dd == 24) {
+        } else if (mm === 10 && dd === 24) {
             reason = 'Day of the United Nations';
-        } else if (mm == 11 && dd == 6) {
+        } else if (mm === 11 && dd === 6) {
             reason = 'Day of the Swedish Identity and Gustavus Adolphus Day';
-        } else if (mm == 11 && dd == 20) {
+        } else if (mm === 11 && dd === 20) {
             reason = "Universal Children's Day";
-        } else if (mm == 12 && dd == 6) {
+        } else if (mm === 12 && dd === 6) {
             reason = 'Independence Day';
-        } else if (mm == 12 && dd == 8) {
+        } else if (mm === 12 && dd === 8) {
             reason = 'Birthday of the composer Jean Sibelius; the occasion is also celebrated as the Day of Finnish music';
         }
-
         // Moveable dates
-        if (mm == 5 && dd >= 8 && dd <= 14 && day == 0) {
-            reason = "Mother's Day"
-        } else if (mm == 5 && dd >= 15 && dd <= 21 && day == 0) {
-            reason = "Memorial day for the war dead (everyone who has died in Finnish wars, combat-like duties or peacekeeping operations both during fighting and after they've ceased, including those executed or who have died as a POW)"
-        } else if (mm == 6 && dd >= 19 && dd <= 25 && day == 5) {
-            reason = "Midsummer's eve"
-        } else if (mm == 6 && dd >= 20 && dd <= 26 && day == 6) {
-            reason = "Midsummer"
-        } else if (mm == 11 && dd >= 15 && dd <= 21 && day == 0) {
-            reason = "Father's Day"
+        if (mm === 5 && dd >= 8 && dd <= 14 && day === 0) {
+            reason = "Mother's Day";
+        } else if (mm === 5 && dd >= 15 && dd <= 21 && day === 0) {
+            reason = "Memorial day for the war dead (everyone who has died in Finnish wars, combat-like duties or peacekeeping operations both during fighting and after they've ceased, including those executed or who have died as a POW)";
+        } else if (mm === 6 && dd >= 19 && dd <= 25 && day === 5) {
+            reason = "Midsummer's eve";
+        } else if (mm === 6 && dd >= 20 && dd <= 26 && day === 6) {
+            reason = "Midsummer";
+        } else if (mm === 11 && dd >= 15 && dd <= 21 && day === 0) {
+            reason = "Father's Day";
         }
-
         // One-offs
-        if (dd == 4 && mm == 9 && yyyy == 2014) {
-            reason = "70 years since the end of the Continuation War"
-        } else if (dd == 19 && mm == 4 && yyyy == 2015) {
-            reason = "A parliamentary election"
+        if (dd === 4 && mm === 9 && yyyy === 2014) {
+            reason = "70 years since the end of the Continuation War";
+        } else if (dd === 19 && mm === 4 && yyyy === 2015) {
+            reason = "A parliamentary election";
         }
-
         // Format like 4th June 2014
-        var m_names = new Array("January", "February", "March",
+        var m_names = ["January", "February", "March",
                 "April", "May", "June", "July", "August", "September",
-                "October", "November", "December");
-
+                "October", "November", "December"];
         var suffix = "";
-        if (dd == 1 || dd == 21 || dd == 31) {
+        if (dd === 1 || dd === 21 || dd === 31) {
             suffix = "st";
-        }
-        else if (dd == 2 || dd == 22) {
+        } else if (dd === 2 || dd === 22) {
             suffix = "nd";
-        }
-        else if (dd == 3 || dd == 23) {
+        } else if (dd === 3 || dd === 23) {
             suffix = "rd";
-        }
-        else {
+        } else {
             suffix = "th";
         }
-
-        date_format = dd + "" + suffix + " " + m_names[mm - 1] + " " + yyyy;
-
-        if (reason == "") {
+        var date_format = dd + "" + suffix + " " + m_names[mm - 1] + " " + yyyy;
+        if (reason === "") {
             intro = '';
             reason = 'Flags are not up in Finland today, <span id="date" class="date"></span>';
-            other_reason = "(Unless there's parliamentary or local elections, elections to the European Parliament, a referendum, or the President of Finland is inaugurated)"
+            other_reason = "(Unless there's elections, a referendum, the president is inaugurated, or something else &ndash; <a href=\"https://github.com/hugovk/whyaretheflagsup/issues/new\">let us know</a>)";
             enable_background_image = false;
         }
 
+$(document).ready(function() {
+    $('#intro').html(intro);
+    $('#reason').html(reason);
+    $('#other_reason').html(other_reason);
+    $('#date').html(date_format);
+    if (enable_background_image) {
+        var htmlElement = document.querySelector("html");
+        htmlElement.style.backgroundImage = 'url(flag.jpg)';
+        $("#reason").addClass("outline");
+        $(".reason-container").css({"bottom": "0"});
+    }
+    $('#reason-container').textfill({ maxFontPixels: 0 });
+});
 
-        window.onload = function () {
-            document.getElementById("intro").innerHTML = intro;
-            document.getElementById("reason").innerHTML = reason;
-            document.getElementById("other_reason").innerHTML = other_reason;
-            document.getElementById("date").innerHTML = date_format;
-            console.log(enable_background_image);
-            if (enable_background_image) {
-                var htmlElement = document.querySelector("html");
-                htmlElement.style.backgroundImage = 'url(flag.jpg)';
-            }
+$(window).resize(function() {
+  $('#reason-container').textfill( {maxFontPixels: 0} );
+});
 
-        }
         -->
     </script>
     <script>
@@ -220,6 +217,11 @@
 <body>
 <div class="page-wrap">
 
+    <div class="twitter-button">
+        <a href="https://twitter.com/FinnishFlags" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @FinnishFlags</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+
     <div class="github-fork-ribbon-wrapper right">
         <div class="github-fork-ribbon">
             <a href="https://github.com/hugovk/whyaretheflagsup">Fork me on GitHub</a>
@@ -227,10 +229,10 @@
     </div>
 
     <H2>
-        <div id="intro" class="intro"></div>
+        <div id="intro" class="intro outline"></div>
     </H2>
     <H1>
-        <div id="reason" class="reason"></div>
+        <div id="reason-container"><span id="reason" class="reason"></span></div>
     </H1>
 
 </div>
