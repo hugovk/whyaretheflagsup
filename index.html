@@ -94,7 +94,17 @@
 
     <script type="text/javascript">
         <!--
-        var today = new Date();
+        function getURLParameter(name) {
+            return decodeURI(
+                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+            );
+        }
+
+        if (getURLParameter("date") !== "null") {
+            var today = new Date(getURLParameter("date"));
+        } else {
+            var today = new Date();
+        }
         var day = today.getDay(); // Sunday is 0, Monday is 1, ... Saturday is 6
         var dd = today.getDate();
         var mm = today.getMonth() + 1; // January is 0!
