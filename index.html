@@ -98,10 +98,34 @@
 
     <script type="text/javascript">
         <!--
+        var SUNDAY = 0;
+        var MONDAY = 1;
+        var TUESDAY = 2;
+        var WEDNESDAY = 3;
+        var THURSDAY = 4;
+        var FRIDAY = 5;
+        var SATURDAY = 6;
+
         function getURLParameter(name) {
             return decodeURI(
                 (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
             );
+        }
+
+        function is_xth_day_in_month(today, required_xth, required_day, required_mm) {
+            // Is this the required_xth required_day in required_mm?
+            // For example, is this the second Sunday in May?
+            var day = today.getDay(); // Sunday is 0, Monday is 1, ... Saturday is 6
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; // January is 0!
+
+            var max_dd = required_xth * 7;
+            var min_dd = max_dd - 6;
+
+            if (mm === required_mm && dd >= min_dd && dd <= max_dd && day === required_day) {
+                return true;
+            }
+            return false;
         }
 
         if (getURLParameter("date") !== "null") {
@@ -153,15 +177,15 @@
             reason = 'Birthday of the composer Jean Sibelius; the occasion is also celebrated as the Day of Finnish music';
         }
         // Moveable dates
-        if (mm === 5 && dd >= 8 && dd <= 14 && day === 0) {
+        if (is_xth_day_in_month(today, 2, SUNDAY, 5)) {
             reason = "Mother's Day";
-        } else if (mm === 5 && dd >= 15 && dd <= 21 && day === 0) {
+        } else if (is_xth_day_in_month(today, 3, SUNDAY, 5)) {
             reason = "Memorial day for the war dead (everyone who has died in Finnish wars, combat-like duties or peacekeeping operations both during fighting and after they've ceased, including those executed or who have died as a POW)";
-        } else if (mm === 6 && dd >= 19 && dd <= 25 && day === 5) {
+        } else if (mm === 6 && dd >= 19 && dd <= 25 && day === FRIDAY) {
             reason = "Midsummer's eve";
-        } else if (mm === 6 && dd >= 20 && dd <= 26 && day === 6) {
+        } else if (mm === 6 && dd >= 20 && dd <= 26 && day === SATURDAY) {
             reason = "Midsummer";
-        } else if (mm === 11 && dd >= 15 && dd <= 21 && day === 0) {
+        } else if (is_xth_day_in_month(today, 2, SUNDAY, 11)) {
             reason = "Father's Day";
         }
         // One-offs
