@@ -118,12 +118,12 @@
             );
         }
 
-        function is_xth_day_in_month(today, required_xth, required_day, required_mm) {
+        function is_xth_day_in_month(date, required_xth, required_day, required_mm) {
             // Is this the required_xth required_day in required_mm?
             // For example, is this the second Sunday in May?
-            var day = today.getDay(); // Sunday is 0, Monday is 1, ... Saturday is 6
-            var dd = today.getDate();
-            var mm = today.getMonth() + 1; // January is 0!
+            var day = date.getDay(); // Sunday is 0, Monday is 1, ... Saturday is 6
+            var dd = date.getDate();
+            var mm = date.getMonth() + 1; // January is 0!
 
             var max_dd = required_xth * 7;
             var min_dd = max_dd - 6;
@@ -134,16 +134,27 @@
             return false;
         }
 
-        if (getURLParameter("date") !== "null") {
-            var today = new Date(getURLParameter("date"));
-        } else {
-            var today = new Date();
-        }
-        var day = today.getDay(); // Sunday is 0, Monday is 1, ... Saturday is 6
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1; // January is 0!
-        var yyyy = today.getFullYear();
+        var today = new Date();
+        var past = false;
+        var future = false;
         var intro = 'Flags are up in Finland because today, <span id="date" class="date"></span>, is:';
+        today.setHours(0, 0, 0, 0); // keep date, ditch time
+        if (getURLParameter("date") !== "null") {
+            var date = new Date(getURLParameter("date"));
+            if (date < today) {
+                past = true;
+                intro = 'Flags were up in Finland because <span id="date" class="date"></span> was:';
+            } else if (today < date) {
+                future = true;
+                intro = 'Flags will be up in Finland because <span id="date" class="date"></span> will be:';
+            }
+        } else {
+            var date = today;
+        }
+        var day = date.getDay(); // Sunday is 0, Monday is 1, ... Saturday is 6
+        var dd = date.getDate();
+        var mm = date.getMonth() + 1; // January is 0!
+        var yyyy = date.getFullYear();
         var reason = "";
         var other_reason = "";
         var enable_background_image = true;
@@ -183,19 +194,19 @@
             reason = 'Birthday of the composer Jean Sibelius; the occasion is also celebrated as the Day of Finnish music';
         }
         // Moveable dates
-        if (is_xth_day_in_month(today, 2, SUNDAY, 5)) {
+        if (is_xth_day_in_month(date, 2, SUNDAY, 5)) {
             reason = "Mother's Day";
-        } else if (is_xth_day_in_month(today, 3, SUNDAY, 5)) {
+        } else if (is_xth_day_in_month(date, 3, SUNDAY, 5)) {
             reason = "Memorial day for the war dead (everyone who has died in Finnish wars, combat-like duties or peacekeeping operations both during fighting and after they've ceased, including those executed or who have died as a POW)";
         } else if (mm === 6 && dd >= 19 && dd <= 25 && day === FRIDAY) {
             reason = "Midsummer's eve";
         } else if (mm === 6 && dd >= 20 && dd <= 26 && day === SATURDAY) {
             reason = "Midsummer";
-        } else if (is_xth_day_in_month(today, 2, SUNDAY, 11)) {
+        } else if (is_xth_day_in_month(date, 2, SUNDAY, 11)) {
             reason = "Father's Day";
         }
         // General election every fourth year. Since 2011: third Sunday in April.
-        if (is_xth_day_in_month(today, 3, SUNDAY, 4)) {
+        if (is_xth_day_in_month(date, 3, SUNDAY, 4)) {
             if ((yyyy - 2011) % 4 === 0) {
             reason = "A parliamentary election";
             }
@@ -221,7 +232,13 @@
         var date_format = dd + "" + suffix + " " + m_names[mm - 1] + " " + yyyy;
         if (reason === "") {
             intro = '';
-            reason = 'Flags are not up in Finland today, <span id="date" class="date"></span>';
+            if (past) {
+                reason = 'Flags were not up in Finland on <span id="date" class="date"></span>';
+            } else if (future) {
+                reason = 'Flags will not be up in Finland on <span id="date" class="date"></span>';
+            } else {
+                reason = 'Flags are not be up in Finland today, <span id="date" class="date"></span>';
+            }
             other_reason = "(Unless there's elections, a referendum, the president is inaugurated, or something else &ndash; <a href=\"https://github.com/hugovk/whyaretheflagsup/issues/new\">let us know</a>)";
             enable_background_image = false;
         }
@@ -237,11 +254,11 @@ $(document).ready(function() {
         $("#reason").addClass("outline");
         $(".reason-container").css({"bottom": "0"});
     }
-    $('#reason-container').textfill({ maxFontPixels: 0 });
+    $('#reason-container').textfill({maxFontPixels: 0});
 });
 
 $(window).resize(function() {
-  $('#reason-container').textfill( {maxFontPixels: 0} );
+  $('#reason-container').textfill({maxFontPixels: 0});
 });
 
         -->
