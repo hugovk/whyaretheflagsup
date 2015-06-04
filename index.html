@@ -112,6 +112,19 @@
         var FRIDAY = 5;
         var SATURDAY = 6;
 
+        var JANUARY = 1;
+        var FEBRUARY = 2;
+        var MARCH = 3;
+        var APRIL = 4;
+        var MAY = 5;
+        var JUNE = 6;
+        var JULY = 7;
+        var AUGUST = 8;
+        var SEPTEMBER = 9;
+        var OCTOBER = 10;
+        var NOVEMBER = 11;
+        var DECEMBER = 12;
+
         function getURLParameter(name) {
             return decodeURI(
                 (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
@@ -160,59 +173,59 @@
         var enable_background_image = true;
 
         // Static dates
-        if (mm === 2 && dd === 5) {
+        if (mm === FEBRUARY && dd === 5) {
             reason = 'Birthday of the national poet Johan Ludvig Runeberg';
-        } else if (mm === 2 && dd === 28) {
+        } else if (mm === FEBRUARY && dd === 28) {
             reason = 'Day of Kalevala; the occasion is also celebrated as the Day of Finnish culture';
-        } else if (mm === 3 && dd === 19) {
+        } else if (mm === MARCH && dd === 19) {
             reason = 'Birthday of novelist and playwright Minna Canth, Day of Equality, beginning in 2007';
-        } else if (mm === 4 && dd === 9) {
+        } else if (mm === APRIL && dd === 9) {
             reason = 'The day Mikael Agricola, the founder of the literary Finnish died and Elias Lönnrot, a collector of folklore was born; the occasion is also celebrated as the Day of the Finnish language';
-        } else if (mm === 4 && dd === 27) {
+        } else if (mm === APRIL && dd === 27) {
             reason = "National War Veterans' Day";
-        } else if (mm === 5 && dd === 1) {
+        } else if (mm === MAY && dd === 1) {
             reason = 'Vappu, the Day of Finnish Labour';
-        } else if (mm === 5 && dd === 9) {
+        } else if (mm === MAY && dd === 9) {
             reason = 'Europe Day';
-        } else if (mm === 5 && dd === 12) {
+        } else if (mm === MAY && dd === 12) {
             reason = 'Day of the Finnish Identity, birthday of the statesman Johan Vilhelm Snellman';
-        } else if (mm === 6 && dd === 4) {
+        } else if (mm === JUNE && dd === 4) {
             reason = 'Birthday of Carl Gustaf Emil Mannerheim, Marshal of Finland; the occasion is also celebrated as the Flag Day of the Finnish Defence Forces';
-        } else if (mm === 7 && dd === 6) {
+        } else if (mm === JULY && dd === 6) {
             reason = 'Birthday of the poet Eino Leino; the occasion is also a celebration of poetry and summer';
-        } else if (mm === 10 && dd === 10) {
+        } else if (mm === OCTOBER && dd === 10) {
             reason = 'Birthday of the National writer Aleksis Kivi; the occasion is also celebrated as the Day of Finnish literature';
-        } else if (mm === 10 && dd === 24) {
+        } else if (mm === OCTOBER && dd === 24) {
             reason = 'Day of the United Nations';
-        } else if (mm === 11 && dd === 6) {
+        } else if (mm === NOVEMBER && dd === 6) {
             reason = 'Day of the Swedish Identity and Gustavus Adolphus Day';
-        } else if (mm === 11 && dd === 20) {
+        } else if (mm === NOVEMBER && dd === 20) {
             reason = "Universal Children's Day";
-        } else if (mm === 12 && dd === 6) {
+        } else if (mm === DECEMBER && dd === 6) {
             reason = 'Independence Day';
-        } else if (mm === 12 && dd === 8) {
+        } else if (mm === DECEMBER && dd === 8) {
             reason = 'Birthday of the composer Jean Sibelius; the occasion is also celebrated as the Day of Finnish music';
         }
         // Moveable dates
-        if (is_xth_day_in_month(date, 2, SUNDAY, 5)) {
+        if (is_xth_day_in_month(date, 2, SUNDAY, MAY)) {
             reason = "Mother's Day";
-        } else if (is_xth_day_in_month(date, 3, SUNDAY, 5)) {
+        } else if (is_xth_day_in_month(date, 3, SUNDAY, MAY)) {
             reason = "Memorial day for the war dead (everyone who has died in Finnish wars, combat-like duties or peacekeeping operations both during fighting and after they've ceased, including those executed or who have died as a POW)";
-        } else if (mm === 6 && dd >= 19 && dd <= 25 && day === FRIDAY) {
+        } else if (mm === JUNE && dd >= 19 && dd <= 25 && day === FRIDAY) {
             reason = "Midsummer's eve";
-        } else if (mm === 6 && dd >= 20 && dd <= 26 && day === SATURDAY) {
+        } else if (mm === JUNE && dd >= 20 && dd <= 26 && day === SATURDAY) {
             reason = "Midsummer";
-        } else if (is_xth_day_in_month(date, 2, SUNDAY, 11)) {
+        } else if (is_xth_day_in_month(date, 2, SUNDAY, NOVEMBER)) {
             reason = "Father's Day";
         }
         // General election every fourth year. Since 2011: third Sunday in April.
-        if (is_xth_day_in_month(date, 3, SUNDAY, 4)) {
+        if (is_xth_day_in_month(date, 3, SUNDAY, APRIL)) {
             if ((yyyy - 2011) % 4 === 0) {
             reason = "A parliamentary election";
             }
         }
         // One-offs
-        if (dd === 4 && mm === 9 && yyyy === 2014) {
+        if (dd === 4 && mm === SEPTEMBER && yyyy === 2014) {
             reason = "70 years since the end of the Continuation War";
         }
         // Format like 4th June 2014
