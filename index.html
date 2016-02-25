@@ -12,9 +12,9 @@
     <meta name="twitter:description" content="Are the flags up in Finland? Find out why.">
     <meta name="twitter:image" content="https://whyaretheflagsup.github.io/flag.jpg">
 
-    <link rel="stylesheet" href="https://simonwhitaker.github.io/github-fork-ribbon-css/gh-fork-ribbon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css">
     <!--[if lt IE 9]>
-    <link rel="stylesheet" href="https://simonwhitaker.github.io/github-fork-ribbon-css/gh-fork-ribbon.ie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.ie.min.css">
     <![endif]-->
 
     <style type="text/css">
@@ -88,7 +88,7 @@
             background-size: cover;
         }
 
-        .github-fork-ribbon {
+        .github-fork-ribbon:before {
             background-color: #18447E;
         }
 
@@ -301,11 +301,7 @@ $(window).resize(function() {
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     </div>
 
-    <div class="github-fork-ribbon-wrapper right">
-        <div class="github-fork-ribbon">
-            <a href="https://github.com/hugovk/whyaretheflagsup">Fork me on GitHub</a>
-        </div>
-    </div>
+    <a class="github-fork-ribbon left-right" href="https://github.com/hugovk/whyaretheflagsup" title="Fork me on GitHub">Fork me on GitHub</a>
 
     <H2>
         <div id="intro" class="intro outline"></div>
