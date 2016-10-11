@@ -152,8 +152,10 @@
         var future = false;
         var intro = 'Flags are up in Finland because today, <span id="date" class="date"></span>, is:';
         today.setHours(0, 0, 0, 0); // keep date, ditch time
-        if (getURLParameter("date") !== "null") {
-            var date = new Date(getURLParameter("date"));
+        dateParam = getURLParameter('date');
+        if (dateParam !== 'null') {
+            dateParam = dateParam.replace(/\+/g, '-'); // Replace all + with -
+            var date = new Date(dateParam);
             if (date < today) {
                 past = true;
                 intro = 'Flags were up in Finland because <span id="date" class="date"></span> was:';
