@@ -195,6 +195,8 @@
             reason = 'Birthday of Carl Gustaf Emil Mannerheim, Marshal of Finland; the occasion is also celebrated as the Flag Day of the Finnish Defence Forces';
         } else if (mm === JULY && dd === 6) {
             reason = 'Birthday of the poet Eino Leino; the occasion is also a celebration of poetry and summer';
+        } else if (mm === OCTOBER && dd === 1) {
+            reason = 'To honour Miina Sillanpää and civic influence';
         } else if (mm === OCTOBER && dd === 10) {
             reason = 'Birthday of the National writer Aleksis Kivi; the occasion is also celebrated as the Day of Finnish literature';
         } else if (mm === OCTOBER && dd === 24) {
@@ -228,9 +230,17 @@
             reason = "A parliamentary election";
             }
         }
+        // Other elections
+        if (dd === 28 && mm === JANUARY && yyyy === 2018) {
+            reason = "A presidential election";
+        }
         // One-offs
         if (dd === 4 && mm === SEPTEMBER && yyyy === 2014) {
             reason = "70 years since the end of the Continuation War";
+        } else if (dd === 5 && mm === DECEMBER && yyyy === 2017) {
+            reason = "Finland's Centenary Independence Day Eve";
+        } else if (dd === 1 && mm === FEBRUARY && yyyy === 2018) {
+            reason = "Inauguration of the President";
         }
         // Format like 4th June 2014
         var m_names = ["January", "February", "March",
@@ -256,7 +266,7 @@
             } else {
                 reason = 'Flags are not up in Finland today, <span id="date" class="date"></span>';
             }
-            other_reason = "(Unless there's elections, a referendum, the president is inaugurated, or something else &ndash; <a href=\"https://github.com/hugovk/whyaretheflagsup/issues/new\">let us know</a>)";
+            other_reason = "(Unless there's elections, a referendum, the president is inaugurated, or something else &ndash; <a href=\"https://github.com/whyaretheflagsup/whyaretheflagsup/issues/new\">let us know</a>)";
             enable_background_image = false;
         }
 
@@ -305,7 +315,7 @@ $(window).resize(function() {
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     </div>
 
-    <a class="github-fork-ribbon left-right" href="https://github.com/hugovk/whyaretheflagsup" title="Fork me on GitHub">Fork me on GitHub</a>
+    <a class="github-fork-ribbon left-right" href="https://github.com/whyaretheflagsup/whyaretheflagsup" title="Fork me on GitHub">Fork me on GitHub</a>
 
     <H2>
         <div id="intro" class="intro outline"></div>
