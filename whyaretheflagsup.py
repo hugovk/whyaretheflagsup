@@ -12,9 +12,9 @@ import glob
 import os
 import random
 import sys
-import twitter
+import twitter  # pip install twitter
 import webbrowser
-import yaml
+import yaml  # pip install PyYAML
 
 HELSINKI_LAT = 60.170833
 HELSINKI_LONG = 24.9375
@@ -55,7 +55,8 @@ def load_yaml(filename):
     f = open(filename)
     data = yaml.safe_load(f)
     f.close()
-    if not data.viewkeys() >= {
+    keys = data.viewkeys() if sys.version_info.major == 2 else data.keys()
+    if not keys >= {
             'access_token', 'access_token_secret',
             'consumer_key', 'consumer_secret'}:
         sys.exit("Twitter credentials missing from YAML: " + filename)
