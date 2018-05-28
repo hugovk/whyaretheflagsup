@@ -12,7 +12,7 @@ import glob
 import os
 import random
 import sys
-import twitter
+import twitter  # pip install twitter
 import webbrowser
 import yaml
 
