@@ -14,7 +14,7 @@ import random
 import sys
 import twitter  # pip install twitter
 import webbrowser
-import yaml
+import yaml  # pip install PyYAML
 
 HELSINKI_LAT = 60.170833
 HELSINKI_LONG = 24.9375
