@@ -6,11 +6,15 @@ python:
 
 install:
  - pip install pyflakes pycodestyle
+ - pip install -r requirements.txt
 
 script:
  # Static analysis
  - pyflakes .
  - pycodestyle --statistics --count .
+
+ # Dry run
+ - python whyaretheflagsup.py --test
 
 matrix:
   fast_finish: true
