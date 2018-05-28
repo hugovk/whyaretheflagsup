@@ -14,7 +14,7 @@ script:
  - pycodestyle --statistics --count .
 
  # Dry run
- - python whyaretheflagsup.py --test
+ - python whyaretheflagsup.py --test -y whyaretheflagsup_example.yaml
 
 matrix:
   fast_finish: true
