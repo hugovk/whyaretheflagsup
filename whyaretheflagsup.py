@@ -168,7 +168,8 @@ if __name__ == "__main__":
 
     reason = flag_reason()
     if not reason:
-        sys.exit("Flags are (probably) not up")
+        print("Flags are (probably) not up")
+        sys.exit()
 
     print("Flags are up!")
     print(reason)
