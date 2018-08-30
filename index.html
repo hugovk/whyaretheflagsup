@@ -219,6 +219,8 @@
             reason = "Midsummer's eve";
         } else if (mm === JUNE && dd >= 20 && dd <= 26 && day === SATURDAY) {
             reason = "Midsummer";
+        } else if (mm === AUGUST && dd >= 25 && dd <= 31 && day === SATURDAY) {
+            reason = "Finnish Nature Day";
         } else if (is_xth_day_in_month(date, 2, SUNDAY, NOVEMBER)) {
             reason = "Father's Day";
         }
@@ -235,8 +237,6 @@
         // One-offs
         if (dd === 4 && mm === SEPTEMBER && yyyy === 2014) {
             reason = "70 years since the end of the Continuation War";
-        } else if (dd === 26 && mm === AUGUST && yyyy === 2017) {
-            reason = "Finnish Nature Day";
         } else if (dd === 5 && mm === DECEMBER && yyyy === 2017) {
             reason = "Finland's Centenary Independence Day Eve";
         } else if (dd === 1 && mm === FEBRUARY && yyyy === 2018) {
