@@ -195,6 +195,8 @@
             reason = 'Birthday of Carl Gustaf Emil Mannerheim, Marshal of Finland; the occasion is also celebrated as the Flag Day of the Finnish Defence Forces';
         } else if (mm === JULY && dd === 6) {
             reason = 'Birthday of the poet Eino Leino; the occasion is also a celebration of poetry and summer';
+        } else if (mm === JULY && dd === 10) {
+            reason = "Helene Schjerfbeck Day, anniversary of the birth of the celebrated Finnish painter Helene Schjerfbeck; Finnish Visual Arts Day";
         } else if (mm === OCTOBER && dd === 1) {
             reason = 'To honour Miina Sillanpää and civic influence';
         } else if (mm === OCTOBER && dd === 10) {
@@ -210,6 +212,7 @@
         } else if (mm === DECEMBER && dd === 8) {
             reason = 'Birthday of the composer Jean Sibelius; the occasion is also celebrated as the Day of Finnish music';
         }
+
         // Moveable dates
         if (is_xth_day_in_month(date, 2, SUNDAY, MAY)) {
             reason = "Mother's Day";
@@ -224,12 +227,14 @@
         } else if (is_xth_day_in_month(date, 2, SUNDAY, NOVEMBER)) {
             reason = "Father's Day";
         }
+
         // General election every fourth year. Since 2011: third Sunday in April.
         if (is_xth_day_in_month(date, 3, SUNDAY, APRIL)) {
             if ((yyyy - 2011) % 4 === 0) {
             reason = "A parliamentary election";
             }
         }
+
         // Other elections
         if (dd === 28 && mm === JANUARY && yyyy === 2018) {
             reason = "A presidential election";
